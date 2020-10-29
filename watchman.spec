@@ -13,6 +13,7 @@ BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: openssl-devel
 BuildRequires: pcre
+BuildRequires: python
 
 %description
 Watches files and records, or triggers actions, when they change.
