@@ -12,6 +12,7 @@ BuildRequires: make
 BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: openssl-devel
+BuildRequires: git
 BuildRequires: pcre
 BuildRequires: python3-devel
 BuildRequires: python3dist(setuptools)
