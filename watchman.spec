@@ -13,7 +13,9 @@ BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: openssl-devel
 BuildRequires: pcre
-BuildRequires: python
+BuildRequires: python3-devel
+BuildRequires: python3dist(setuptools)
+
 
 %description
 Watches files and records, or triggers actions, when they change.
@@ -24,7 +26,7 @@ Watches files and records, or triggers actions, when they change.
 
 # See https://github.com/facebook/watchman/issues/638 as to why --enable-lenient
 # is required.
-%configure --enable-lenient --without-python --disable-statedir
+%configure --enable-lenient --with-python=%{__python3} --disable-statedir
 
 %build
 %make_build
