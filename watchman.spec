@@ -1,10 +1,10 @@
 Name:    watchman
-Version: 2020.09.21.00
+Version: c769068b24655b14fd2c0e43eee1c5ca5d741ece
 Release: 2%{?dist}
 Summary: Watches files and records, or triggers actions, when they change.
 License: APL2
 URL:     https://facebook.github.io/watchman/
-Source0: https://github.com/facebook/%{name}/archive/v%{version}.tar.gz
+Source0: https://github.com/facebook/%{name}/archive/%{version}.tar.gz
 
 BuildRequires: gcc-c++
 BuildRequires: libtool
@@ -47,5 +47,7 @@ rm -rf %{buildroot}%{_docdir}/%{name}-%{version}
 %attr(0755,root,root) %{_bindir}/watchman{,-make,-wait}
 
 %changelog
+* Thu Nov 5 2020 Leonard Ehrenfried <mail@leonard.io>
+- Updates to the newest version of watchman
 * Thu Nov 22 2018 Evan Klitzke <evan@eklitzke.org>
 - Initial version
