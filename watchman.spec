@@ -16,7 +16,7 @@ BuildRequires: git
 BuildRequires: pcre
 BuildRequires: python3-devel
 BuildRequires: python3dist(setuptools)
-
+BuildRequires: zlib-devel
 
 %description
 Watches files and records, or triggers actions, when they change.
