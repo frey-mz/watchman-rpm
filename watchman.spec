@@ -1,6 +1,6 @@
 Name:    watchman
-Version: c769068b24655b14fd2c0e43eee1c5ca5d741ece
-Release: 2%{?dist}
+Version: f5e66ddb209673296dc7a485b7eaba9ddc9c3442
+Release: 3%{?dist}
 Summary: Watches files and records, or triggers actions, when they change.
 License: APL2
 URL:     https://facebook.github.io/watchman/
@@ -27,6 +27,8 @@ Watches files and records, or triggers actions, when they change.
 
 # See https://github.com/facebook/watchman/issues/638 as to why --enable-lenient
 # is required.
+pwd
+ls -lah
 %configure --enable-lenient --with-python=%{__python3} --disable-statedir
 
 %build
