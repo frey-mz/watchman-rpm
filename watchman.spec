@@ -34,7 +34,7 @@ python3 build/fbcode_builder/getdeps.py --allow-system-packages build --src-dir=
 #make check
 
 %install
-make install DESTDIR=%{buildroot}
+#make install DESTDIR=%{buildroot}
 mkdir %{buildroot}%{_docdir}/%{name}
 rm -rf %{buildroot}%{_docdir}/%{name}-%{version}
 
