@@ -25,14 +25,9 @@ Watches files and records, or triggers actions, when they change.
 %autosetup -n %{name}-%{version}
 ./autogen.sh
 
-# See https://github.com/facebook/watchman/issues/638 as to why --enable-lenient
-# is required.
-pwd
-ls -lah
-%configure --enable-lenient --with-python=%{__python3} --disable-statedir
 
 %build
-%make_build
+python3 build/fbcode_builder/getdeps.py --allow-system-packages build --src-dir=. watchman  --project-install-prefix watchman:/usr/local
 
 # Unfortunately make check fails on art.t
 # %%check
