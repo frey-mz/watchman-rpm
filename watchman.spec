@@ -27,7 +27,11 @@ Watches files and records, or triggers actions, when they change.
 
 
 %build
-python3 build/fbcode_builder/getdeps.py --allow-system-packages build --src-dir=. watchman  --project-install-prefix watchman:/usr/local
+# build watchman itself
+python3 build/fbcode_builder/getdeps.py --allow-system-packages build --src-dir=. watchman  --project-install-prefix watchman:/usr/
+
+# copy artifacts
+python3 build/fbcode_builder/getdeps.py --allow-system-packages fixup-dyn-deps --strip --src-dir=. watchman _artifacts/linux  --project-install-prefix watchman:/usr/ --final-install-prefix /usr/
 
 # Unfortunately make check fails on art.t
 # %%check
