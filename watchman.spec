@@ -1,10 +1,10 @@
 Name:    watchman
-Version: f5e66ddb209673296dc7a485b7eaba9ddc9c3442
+Version: 2020.09.21.00
 Release: 3%{?dist}
 Summary: Watches files and records, or triggers actions, when they change.
 License: APL2
 URL:     https://facebook.github.io/watchman/
-Source0: https://github.com/facebook/%{name}/archive/%{version}.tar.gz
+Source0: https://github.com/facebook/%{name}/archive/v%{version}.tar.gz
 
 BuildRequires: gcc-c++
 BuildRequires: libtool
@@ -23,15 +23,15 @@ Watches files and records, or triggers actions, when they change.
 
 %prep
 %autosetup -n %{name}-%{version}
-./autogen.sh
+#./autogen.sh
 
 
 %build
 # build watchman itself
-python3 build/fbcode_builder/getdeps.py --allow-system-packages build --src-dir=. watchman  --project-install-prefix watchman:/usr/
+#python3 build/fbcode_builder/getdeps.py --allow-system-packages build --src-dir=. watchman  --project-install-prefix watchman:/usr/
 
 # copy artifacts
-python3 build/fbcode_builder/getdeps.py --allow-system-packages fixup-dyn-deps --strip --src-dir=. watchman _artifacts/linux  --project-install-prefix watchman:/usr/ --final-install-prefix /usr/
+#python3 build/fbcode_builder/getdeps.py --allow-system-packages fixup-dyn-deps --strip --src-dir=. watchman _artifacts/linux  --project-install-prefix watchman:/usr/ --final-install-prefix /usr/
 
 # Unfortunately make check fails on art.t
 # %%check
@@ -39,8 +39,8 @@ python3 build/fbcode_builder/getdeps.py --allow-system-packages fixup-dyn-deps -
 
 %install
 #make install DESTDIR=%{buildroot}
-#mkdir %{buildroot}%{_docdir}/%{name}
-#rm -rf %{buildroot}%{_docdir}/%{name}-%{version}
+mkdir %{buildroot}%{_docdir}/%{name}
+rm -rf %{buildroot}%{_docdir}/%{name}-%{version}
 
 %files
 %defattr(-,root,root,-)
