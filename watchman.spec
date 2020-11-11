@@ -1,6 +1,6 @@
 Name:    watchman
 Version: 2020.09.21.00
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: Watches files and records, or triggers actions, when they change.
 License: APL2
 URL:     https://facebook.github.io/watchman/
