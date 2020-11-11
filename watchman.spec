@@ -6,6 +6,7 @@ License: APL2
 URL:     https://facebook.github.io/watchman/
 Source0: https://github.com/facebook/watchman/releases/download/v%{version}/%{name}-v%{version}-linux.zip
 
+%global debug_package %{nil}
 %global _missing_build_ids_terminate_build 0
 
 %description
@@ -37,6 +38,7 @@ rm -rf %{buildroot}%{_docdir}/%{name}-%{version}
 %defattr(-,root,root,-)
 #%doc README.markdown
 %attr(0755,root,root) /usr/local/bin/watchman
+/usr/local/lib/
 
 %changelog
 * Thu Nov 5 2020 Leonard Ehrenfried <mail@leonard.io>
