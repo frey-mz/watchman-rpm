@@ -34,11 +34,15 @@ cp -r * %{buildroot}/usr/local
 #mkdir %{buildroot}%{_docdir}/%{name}
 rm -rf %{buildroot}%{_docdir}/%{name}-%{version}
 
+mkdir -p %{buildroot}/usr/local/var/run/watchman
+
 %files
 %defattr(-,root,root,-)
 #%doc README.markdown
 %attr(0755,root,root) /usr/local/bin/watchman
 /usr/local/lib/
+
+%attr(2777,root,root) /usr/local/var/run/watchman
 
 %changelog
 * Thu Nov 5 2020 Leonard Ehrenfried <mail@leonard.io>
