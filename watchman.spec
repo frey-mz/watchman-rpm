@@ -6,23 +6,13 @@ License: APL2
 URL:     https://facebook.github.io/watchman/
 Source0: https://github.com/facebook/watchman/releases/download/v%{version}/%{name}-v%{version}-linux.zip
 
-BuildRequires: gcc-c++
-BuildRequires: libtool
-BuildRequires: make
-BuildRequires: autoconf
-BuildRequires: automake
-BuildRequires: openssl-devel
-BuildRequires: git
-BuildRequires: pcre
-BuildRequires: python3-devel
-BuildRequires: python3dist(setuptools)
-BuildRequires: zlib-devel
+%global _missing_build_ids_terminate_build 0
 
 %description
 Watches files and records, or triggers actions, when they change.
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -n %{name}-v%{version}-linux
 #./autogen.sh
 
 
@@ -38,14 +28,15 @@ Watches files and records, or triggers actions, when they change.
 #make check
 
 %install
-#make install DESTDIR=%{buildroot}
-mkdir %{buildroot}%{_docdir}/%{name}
+mkdir -p %{buildroot}/usr/local
+cp -r * %{buildroot}/usr/local
+#mkdir %{buildroot}%{_docdir}/%{name}
 rm -rf %{buildroot}%{_docdir}/%{name}-%{version}
 
 %files
 %defattr(-,root,root,-)
 #%doc README.markdown
-%attr(0755,root,root) %{_bindir}/watchman{,-make,-wait}
+%attr(0755,root,root) /usr/local/bin/watchman
 
 %changelog
 * Thu Nov 5 2020 Leonard Ehrenfried <mail@leonard.io>
