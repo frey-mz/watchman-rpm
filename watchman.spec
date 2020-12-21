@@ -1,5 +1,5 @@
 Name:    watchman
-Version: 2020.12.07.00
+Version: 2020.12.21.00
 Release: 1%{?dist}
 Summary: Watches files and records, or triggers actions, when they change.
 License: APL2
