@@ -1,5 +1,5 @@
 Name:    watchman
-Version: 2020.12.21.00
+Version: 2025.10.27.00
 Release: 1%{?dist}
 Summary: Watches files and records, or triggers actions, when they change.
 License: APL2
@@ -45,6 +45,8 @@ mkdir -p %{buildroot}/usr/local/var/run/watchman
 %attr(2777,root,root) /usr/local/var/run/watchman
 
 %changelog
+* Fri Oct 31 2025 Matthew Zhu <mzhu103@gmail.com>
+- Attempt to raw patch a version update
 * Thu Nov 5 2020 Leonard Ehrenfried <mail@leonard.io>
 - Updates to the newest version of watchman
 * Thu Nov 22 2018 Evan Klitzke <evan@eklitzke.org>
